@@ -35,7 +35,7 @@ const resizeDelay = 50;
 const buttonClickMe = document.getElementById("button-click-me");
 const header = document.querySelector(".header");
 const audio = document.querySelector("audio");
-const maxConfettiVelocity = 1.5;
+const maxConfettiVelocity = 2.5;
 const confettiGravity = 0.03;
 let freeConfettiCount;
 
