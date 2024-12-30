@@ -23,7 +23,7 @@ const imagesStrings = [
   "red-white-nosok",
   "red-white-tall-gift"
 ];
-const images = document.getElementsByClassName("canvas__image");
+let images = document.getElementsByClassName("canvas__image");
 const confettiImage = document.querySelector(".canvas__image_heart");
 let backgroundDynamicIcons = [];
 let confetti = [];
@@ -40,14 +40,14 @@ const confettiGravity = 0.03;
 let freeConfettiCount;
 
 
-for (let i = 0; i < images.length; i += 1) {
-  images[i].width = images[i].width * imageScaleFactor;
-  images[i].height = images[i].height * imageScaleFactor;
-}
 confettiImage.width *= confettiScaleFactor;
 confettiImage.height *= confettiScaleFactor;
 
 function init() {
+  for (let i = 0; i < images.length; i += 1) {
+    images[i].width = images[i].width * imageScaleFactor;
+    images[i].height = images[i].height * imageScaleFactor;
+  }
   resize();
   window.addEventListener("resize", debounce(resize, resizeDelay));
   buttonClickMe.addEventListener("click", () => {
@@ -61,7 +61,6 @@ function init() {
 }
 
 function headerClickEventHandler(event) {
-  console.log("HIHIHIH");
   if (event.target !== event.currentTarget) {
     document.addEventListener("click", bombConfetti);
     header.removeEventListener("click", headerClickEventHandler);
