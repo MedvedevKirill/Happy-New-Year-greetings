@@ -39,15 +39,13 @@ const maxConfettiVelocity = 1.5;
 const confettiGravity = 0.03;
 let freeConfettiCount;
 
-
-confettiImage.width *= confettiScaleFactor;
-confettiImage.height *= confettiScaleFactor;
-
 function init() {
   for (let i = 0; i < images.length; i += 1) {
     images[i].width = images[i].width * imageScaleFactor;
     images[i].height = images[i].height * imageScaleFactor;
   }
+  confettiImage.width *= confettiScaleFactor;
+  confettiImage.height *= confettiScaleFactor;
   resize();
   window.addEventListener("resize", debounce(resize, resizeDelay));
   buttonClickMe.addEventListener("click", () => {
