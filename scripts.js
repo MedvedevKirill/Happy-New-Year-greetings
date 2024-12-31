@@ -35,7 +35,7 @@ const resizeDelay = 50;
 const buttonClickMe = document.getElementById("button-click-me");
 const header = document.querySelector(".header");
 const audio = document.querySelector("audio");
-const maxConfettiVelocity = 2.5;
+const maxConfettiVelocity = 10;
 const confettiGravity = 0.03;
 let freeConfettiCount;
 
@@ -55,7 +55,7 @@ function init() {
     draw();
     header.addEventListener("click", headerClickEventHandler);
   });
-  generateConfetti(10);
+  generateConfetti(30);
 }
 
 function headerClickEventHandler(event) {
